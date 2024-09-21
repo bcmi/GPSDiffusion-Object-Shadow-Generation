@@ -5,3 +5,7 @@ We propose **G**eometry **P**rior guided **S**hadow generation **Diffusion** mod
 <p align='center'>  
   <img src='results.jpg'  width=95% />
 </p>
+
+GPSDiffusion has been integrated into our image composition toolbox [libcom](https://github.com/bcmi/libcom).
+
+The full code will be released upon the acceptance of paper. 
