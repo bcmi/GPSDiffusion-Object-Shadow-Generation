@@ -16,4 +16,29 @@ We propose **G**eometry **P**rior guided **S**hadow generation **Diffusion** mod
 
 GPSDiffusion has been integrated into our image composition toolbox [libcom](https://github.com/bcmi/libcom).
 
-The full code will be released upon the acceptance of paper. 
+### Installation
+- Clone this repo:
+    git clone https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation.git
+- Download the DESOBAv2 dataset from [[Baidu Cloud]](https://pan.baidu.com/s/1_nXb3ElxImmsq2BPcBGdPQ?pwd=bcmi) (access code: bcmi) or [[One Drive]](https://1drv.ms/f/c/c718d03566122c80/EgyrW8JfnBRGguliqv-D3-8B8n5YB9mUyqQ0eKS4mzyJOA?e=ZPjAas). Unzip `desobav2-256x256.rar` to `./data/`, and rename it to `desobav2`.
+- Download the checkpoints from [[Baidu Cloud]](https://pan.baidu.com/s/1RYgwUsS1GX1-2MmRj2WRpA?pwd=bcmi) (access code: bcmi). Unzip `pretrained_models.zip` to `./models/`.
+
+### Environment
+    conda env create -f environment.yaml
+    conda activate GPSDiffusion
+
+### Training
+    python train_GPSDiffusion.py
+
+### Inference
+    python infer_GPSDiffusion.py
+
+### Post-processing
+    python post_processing.py
+
+### Evaluation
+    python eval.py
+    
+## Other Resources
+
++ [Awesome-Object-Shadow-Generation](https://github.com/bcmi/Awesome-Object-Shadow-Generation)
++ [Awesome-Image-Composition](https://github.com/bcmi/Awesome-Object-Insertion)
