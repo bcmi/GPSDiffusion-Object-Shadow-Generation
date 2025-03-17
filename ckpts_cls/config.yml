@@ -1,0 +1,30 @@
+SEED: 42            # random seed
+
+DEBUG: 1            # turns on debugging mode
+VERBOSE: 0          # turns on verbose mode in the output console
+
+composite_flist: /data2/zhaohaonan/data/desobav2-256/shadowfree_imgs
+fg_instance_flist: /data2/zhaohaonan/data/desobav2-256/object_masks
+fg_shadow_flist: /data2/zhaohaonan/data/desobav2-256/shadow_masks
+
+TRAIN_LIST: /data2/zhaohaonan/data/desobav2-256/train_label_filtered.txt
+VAL_LIST: /data2/zhaohaonan/data/desobav2-256/test_label_filtered.txt
+TEST_LIST: /data2/zhaohaonan/data/desobav2-256/test_label_filtered.txt
+label_txt: /data2/zhaohaonan/model/GPSDiffusion_prior_model/results_kmeans_1000ep_256_new.txt
+
+LR: 0.0001                    # learning rate
+BETA1: 0.5                    # adam optimizer beta1
+BETA2: 0.999                    # adam optimizer beta2
+
+INPUT_SIZE: 256               # input image size for training 0 for original size
+MAX_ITERS: 100000                # maximum number of iterations to train the model
+
+LOG_INTERVAL: 100000              # how many iterations to wait before logging training status (0: never)
+
+GPU: [0, 1]            # list of gpu ids
+BATCH_SIZE: 16                # input batch size for training
+
+SAVE_INTERVAL: 1000         # how many iterations to wait before saving model (0: never)
+EVAL_INTERVAL: 500           # how many iterations to wait before model evaluation (0: never)
+
+MODEL_LOAD:
