@@ -20,9 +20,9 @@ def restore_img(comp_img):
 def get_args_parser():
     parser = argparse.ArgumentParser('Post-processing', add_help=False)
     parser.add_argument('--batch_size', default=1, type=int)
-    parser.add_argument('--checkpoint_path', default='/data2/zhaohaonan/model/GPSDiffusion/models/pretrained_models/Shadow_ppp.ckpt', type=str)
+    parser.add_argument('--checkpoint_path', default='./models/pretrained_models/Shadow_ppp.ckpt', type=str)
     parser.add_argument('--gpu_id', default=1, type=int)
-    parser.add_argument('--result_dir', default='/data2/zhaohaonan/model/GPSDiffusion-open-source/result_zt', type=str)
+    parser.add_argument('--result_dir', default='./results', type=str)
     return parser
 
 
