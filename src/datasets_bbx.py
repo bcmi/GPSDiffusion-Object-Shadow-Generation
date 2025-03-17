@@ -106,7 +106,7 @@ class Dataset(torch.utils.data.Dataset):
                 if parts[0] == identifier:
                     return int(parts[1]) 
     
-        print(f"Error: 图像 {image_path} 的标签未找到或文件中没有对应的信息。")
+        print(f"Error: image {image_path}")
         sys.exit(1)
 
     def to_tensor(self, img):
