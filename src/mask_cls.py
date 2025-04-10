@@ -125,6 +125,10 @@ class MaskCls():
                         self.save(max_acc)
                     print('---increase-iteration:{}'.format(iteration))
 
+                # save model at checkpoints
+                if self.config.SAVE_INTERVAL and iteration % self.config.SAVE_INTERVAL == 0 and self.rank == 0:
+                    self.save(max_acc)
+
                 time_end_everyiter = time.time()
                 time_current_iter = format_time(time_end_everyiter - time_start_everyiter)
 
