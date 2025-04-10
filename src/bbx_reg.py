@@ -122,6 +122,10 @@ class BoxReg():
                         max_kfiou = cur_kfiou
                     self.save(max_kfiou)
                     print('---increase-iteration:{}'.format(iteration))
+                
+                # save model at checkpoints
+                if self.config.SAVE_INTERVAL and iteration % self.config.SAVE_INTERVAL == 0 and self.rank == 0:
+                    self.save(cur_kfiou)
 
                 time_end_everyiter = time.time()
                 time_current_iter = format_time(time_end_everyiter - time_start_everyiter)
