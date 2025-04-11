@@ -23,8 +23,9 @@ GPSDiffusion has been integrated into our image composition toolbox [libcom](htt
 - Download the checkpoints from [[Baidu Cloud]](https://pan.baidu.com/s/1RYgwUsS1GX1-2MmRj2WRpA?pwd=bcmi) (access code: bcmi). Unzip `pretrained_models.zip` to `./models/`.
 
 ### Environment
-    conda env create -f environment.yaml
+    conda create -n GPSDiffusion python=3.8
     conda activate GPSDiffusion
+    pip install -r requirements.txt
 
 ### Training
     python train_GPSDiffusion.py
