@@ -2,19 +2,24 @@
 
 This is the official repository for the following paper:
 
-> **Shadow Generation Using Diffusion Model with Geometry Prior**  [[arXiv]]()<br>
+> **Shadow Generation Using Diffusion Model with Geometry Prior**  <br>
 >
 > Haonan Zhao, Qingyang Liu, Xinhao Tao, Li Niu, Guangtao Zhai<br>
 > Accepted by **CVPR 2025**.
 
-
-We propose **G**eometry **P**rior guided **S**hadow generation **Diffusion** model (GPSDifffusion), which significantly improves the shadow geometry. The visual comparision between [SGDiffusion](https://github.com/bcmi/Object-Shadow-Generation-Dataset-DESOBAv2) and our GPSDiffusion is shown below. From left to right, we show the composite image, foreground mask, the result of SGDiffusion, the result of our GPSDiffusion, and ground-truth. 
+Object shadow generation aims to generate plausible shadow for the inserted object in the composite image. We propose **G**eometry **P**rior guided **S**hadow generation **Diffusion** model (GPSDifffusion), which significantly improves the shadow geometry. The visual comparision between [SGDiffusion](https://github.com/bcmi/Object-Shadow-Generation-Dataset-DESOBAv2) and our GPSDiffusion is shown below. From left to right, we show the composite image, foreground mask, the result of SGDiffusion, the result of our GPSDiffusion, and ground-truth. 
 
 <p align='center'>  
-  <img src='results.jpg'  width=95% />
+  <img src='figures/cmp_with_SGDiffusion.jpg'  width=95% />
 </p>
 
-GPSDiffusion has been integrated into our image composition toolbox [libcom](https://github.com/bcmi/libcom).
+We also provide the visual comparison with other baselines below. 
+
+<p align='center'>  
+  <img src='figures/cmp_with_baselines.jpg'  width=95% />
+</p>
+
+GPSDiffusion has been integrated into our image composition toolbox [libcom](https://github.com/bcmi/libcom). **Note that the performance of GPSDiffusion is unstable, so you need to generate multiple results and pick the most satisfactory one.** 
 
 ### Installation
 - Clone this repo:
