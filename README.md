@@ -24,8 +24,8 @@ GPSDiffusion has been integrated into our image composition toolbox [libcom](htt
 ### Installation
 - Clone this repo:
     git clone https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation.git
-- Download the DESOBAv2 dataset from [[Baidu Cloud]](https://pan.baidu.com/s/1_nXb3ElxImmsq2BPcBGdPQ?pwd=bcmi) (access code: bcmi) or [[One Drive]](https://1drv.ms/f/c/c718d03566122c80/EgyrW8JfnBRGguliqv-D3-8B8n5YB9mUyqQ0eKS4mzyJOA?e=ZPjAas). Unzip `desobav2-256x256.rar` to `./data/`, and rename it to `desobav2`.
-- Download the checkpoints from [[Baidu Cloud]](https://pan.baidu.com/s/1RYgwUsS1GX1-2MmRj2WRpA?pwd=bcmi) (access code: bcmi). Unzip `pretrained_models.zip` to `./models/`.
+- Download the DESOBAv2 dataset from [[Baidu Cloud]](https://pan.baidu.com/s/1_nXb3ElxImmsq2BPcBGdPQ?pwd=bcmi) (access code: bcmi) or [[Dropbox]](https://www.dropbox.com/scl/fo/f71dg98aszqxtn2qs3l1c/ALS7dpAe3dBPbYbRaq10mnY?rlkey=6cm1vcma91yn06ziy3v4cxzxg&st=69kd9ihx&dl=0). Unzip `desobav2-256x256.rar` to `./data/`, and rename it to `desobav2`.
+- Download the checkpoints from [[Baidu Cloud]](https://pan.baidu.com/s/1RYgwUsS1GX1-2MmRj2WRpA?pwd=bcmi) (access code: bcmi) or [[Dropbox]](https://www.dropbox.com/scl/fi/mwbf7boz4oe99256n20om/pretrained_models.zip?rlkey=ms4spjw4tpuntj9pr6zke7kcc&st=dqkbo6x9&dl=0). Unzip `pretrained_models.zip` to `./models/`.
 
 ### Environment
     conda create -n GPSDiffusion python=3.8
