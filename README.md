@@ -2,7 +2,7 @@
 
 This is the official repository for the following paper:
 
-> **Shadow Generation Using Diffusion Model with Geometry Prior**  <br>
+> **Shadow Generation Using Diffusion Model with Geometry Prior** [[pdf]](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Shadow_Generation_Using_Diffusion_Model_with_Geometry_Prior_CVPR_2025_paper.pdf) [[supp]](https://openaccess.thecvf.com/content/CVPR2025/supplemental/Zhao_Shadow_Generation_Using_CVPR_2025_supplemental.pdf) <br>  
 >
 > Haonan Zhao, Qingyang Liu, Xinhao Tao, Li Niu, Guangtao Zhai<br>
 > Accepted by **CVPR 2025**.
