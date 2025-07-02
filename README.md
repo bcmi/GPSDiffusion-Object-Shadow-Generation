@@ -21,6 +21,10 @@ We also provide the visual comparison with other baselines below.
 
 GPSDiffusion has been integrated into our image composition toolbox [libcom](https://github.com/bcmi/libcom). **Note that the performance of GPSDiffusion is unstable, so you need to generate multiple results and pick the most satisfactory one.** 
 
+## 📢 News
+
+**[2025/7/02]** [GPSDiffusion-SDXL](https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation-SDXL) is available now!
+
 ### Installation
 - Clone this repo:
     git clone https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation.git
