@@ -167,3 +167,48 @@ class TestDataset(Dataset):
         return dict(zt=zt, jpg=target, cls=cls_input, fg=bbx_instance, bbx=bbx_region, embeddings=mask_embeddings, txt=prompt, hint=source, shadowmask=shadow_mask, objectmask=object_mask, \
                      gt=gt_img, shadow_mask_ = shadow_mask_, \
                         img_name=pic_name, shadowfree_img_=shadowfree_img_, object_mask_=object_mask_)
+
+class TestDataset_single(Dataset):
+    def __init__(self, shadowfree_img_path, object_mask_path):    
+        self.shadowfree_img_path = shadowfree_img_path
+        self.object_mask_path = object_mask_path
+
+    def __len__(self):
+        return len(self.shadowfree_img_path)
+
+    def __getitem__(self, idx):
+        
+        shadowfree_img_path = self.shadowfree_img_path
+        object_mask_path = self.object_mask_path
+        pic_name = os.path.basename(shadowfree_img_path)
+        prompt = ''
+        width, height = 512, 512
+        shadowfree_img = cv2.imread(shadowfree_img_path)
+        shadowfree_img = cv2.resize(shadowfree_img, (width, height))
+        object_mask = cv2.imread(object_mask_path, cv2.IMREAD_GRAYSCALE)
+        object_mask = cv2.resize(object_mask, (width, height))
+        _, fg_instance_thresh = cv2.threshold(object_mask, 128, 255, cv2.THRESH_BINARY)
+        contours_instance, _ = cv2.findContours(fg_instance_thresh, cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)
+        merged_contour_points_instance = np.concatenate(contours_instance)
+        rect_instance = cv2.minAreaRect(merged_contour_points_instance)
+        (x, y), (w, h), theta = rect_instance
+        if w < h:
+            temp = w
+            w = h
+            h = temp
+            theta = theta + 90
+        bbx_instance = np.array([x, y, w+1, h+1, theta]).astype(int)
+        bbx_instance = torch.tensor(bbx_instance)
+        shadowfree_img = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
+        target = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
+        source = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
+        cls_input = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
+        cls_input = cls_input.astype(np.float32) / 255.0
+        # Normalize source images to [0, 1].
+        source = source.astype(np.float32) / 255.0
+        # Normalize target images to [-1, 1].
+        target = (target.astype(np.float32) / 127.5) - 1.0
+        mask_embeddings = torch.zeros((64, 2048), dtype=torch.float32)
+        bbx_region = torch.zeros((512, 512), dtype=torch.float32)
+
+        return dict(jpg=target, cls=cls_input, fg=bbx_instance, bbx=bbx_region, embeddings=mask_embeddings, img_name=pic_name, txt=prompt, hint=source)
