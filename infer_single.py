@@ -6,8 +6,8 @@ import torch.nn.functional as F
 from PIL import Image
 import argparse
 from torch.utils.data import DataLoader
-from libcom_dataset import TestDataset, TestDatasetBatch
-from train_post_process_predictor import PostProcess
+from tutorial_dataset import TestDataset_single
+from train_post_process import PostProcess
 from tqdm import tqdm
 import cv2
 import random
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     os.makedirs(args.save_dir_gen, exist_ok=True)
 
-    dataset_test = TestDatasetBatch(shadowfree_img_path=args.shadowfree_imgs_path, object_mask_path=args.object_masks_path)
+    dataset_test = TestDataset_single(shadowfree_img_path=args.shadowfree_imgs_path, object_mask_path=args.object_masks_path)
     dataloader_test = DataLoader(dataset_test, num_workers=0, batch_size=1, shuffle=False)
     for batch in dataloader_test:
         img_name = batch['img_name'][0]
