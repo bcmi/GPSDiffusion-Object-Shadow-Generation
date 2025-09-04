@@ -201,7 +201,7 @@ class TestDataset_single(Dataset):
         bbx_instance = torch.tensor(bbx_instance)
         shadowfree_img = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
         target = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
-        zt = zt
+        zt = target
         source = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
         cls_input = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
         cls_input = cls_input.astype(np.float32) / 255.0
