@@ -201,6 +201,7 @@ class TestDataset_single(Dataset):
         bbx_instance = torch.tensor(bbx_instance)
         shadowfree_img = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
         target = cv2.cvtColor(shadowfree_img, cv2.COLOR_BGR2RGB)
+        zt = zt
         source = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
         cls_input = np.concatenate((shadowfree_img, object_mask[:, :, np.newaxis]), axis=-1)
         cls_input = cls_input.astype(np.float32) / 255.0
@@ -211,4 +212,4 @@ class TestDataset_single(Dataset):
         mask_embeddings = torch.zeros((64, 2048), dtype=torch.float32)
         bbx_region = torch.zeros((512, 512), dtype=torch.float32)
 
-        return dict(jpg=target, cls=cls_input, fg=bbx_instance, bbx=bbx_region, embeddings=mask_embeddings, img_name=pic_name, txt=prompt, hint=source)
+        return dict(zt=zt, jpg=target, cls=cls_input, fg=bbx_instance, bbx=bbx_region, embeddings=mask_embeddings, img_name=pic_name, txt=prompt, hint=source)
