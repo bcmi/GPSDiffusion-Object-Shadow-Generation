@@ -25,6 +25,10 @@ GPSDiffusion has been integrated into our image composition toolbox [libcom](htt
 
 **[2025/7/02]** [GPSDiffusion-SDXL](https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation-SDXL) is available now!
 
+### Online Demo
+
+Try this [online demo](http://libcom.ustcnewly.com/) for image composition and have fun!
+
 ### Installation
 - Clone this repo:
     git clone https://github.com/bcmi/GPSDiffusion-Object-Shadow-Generation.git
