@@ -1,5 +1,10 @@
 # GPSDiffusion-Object-Shadow-Generation
 
+Welcome to scan the WeChat QR code to join the discussion group on image composition/compositing, object insertion/addition.
+<p align="center">
+<img width="150" height="150" alt="Image" src="https://github.com/user-attachments/assets/8572a7c4-0f62-4a5f-bc06-9a1d9fcb14e3" />
+</p>
+
 This is the official repository for the following paper:
 
 > **Shadow Generation Using Diffusion Model with Geometry Prior** [[pdf]](https://openaccess.thecvf.com/content/CVPR2025/papers/Zhao_Shadow_Generation_Using_Diffusion_Model_with_Geometry_Prior_CVPR_2025_paper.pdf) [[supp]](https://openaccess.thecvf.com/content/CVPR2025/supplemental/Zhao_Shadow_Generation_Using_CVPR_2025_supplemental.pdf) <br>  
